@@ -2,13 +2,14 @@
 let heading = document.querySelector('h1')
 
 // Check the typeof heading and log it.
-console.log(typeof heading)
+console.log(typeof heading);
 
 // Change the color of heading to black.
 heading.style.color = 'black'
 
 // Select all the hr elements and store it in a variable named allHrs using querySelectorAll
 let allHrs = document.querySelectorAll('hr')
+console.log(allHrs);
 /* 
 Convert the NodeList returned by querySelectorAll
 to Array using Array.from() or spread operator and 
@@ -19,13 +20,14 @@ so we can use methods like map, reduce
 
 HINT:
 */
-let allHrsArray = Array.from(allHrs)
+let allHrsArray = Array.from(allHrs);
+console.log(allHrsArray)
 
 
 // Set the border of the all the hr elements to "1px solid tomato"
-allHrsArray.map((hr) => {
-  return hr.style.border = '1px solid tomato'
-})
+allHrsArray.forEach((hr) => 
+   hr.style.border = '1px solid tomato'
+)
 
 // Change the background of all the hr to "antiquewhite" using for of loop.
 for(let hr of allHrsArray){
@@ -33,7 +35,7 @@ for(let hr of allHrsArray){
 }
 
 // Change the 'border-radius' of all the hr to "5px" using array.
-allHrsArray.map((hr) => {
+allHrsArray.forEach((hr) => {
   return hr.style.borderRadius = '5px'
 })
 
@@ -44,17 +46,18 @@ heading.style.textAlign = 'center'
 heading.style.fontSize = '3rem'
 
 // Change the border of hr with class 'image' to `2px solid purple`.
-let imageHr = document.querySelector('.image')
-imageHr.style.border = '2px solid purple'
+document.querySelectorAll('hr.image').forEach((elem) =>
+ elem.style.border = '2px solid purple'
+ )
 
 // Hide the box number 17 (last box).
 let hide = document.querySelector('.seventeen')
 hide.style.display = 'none'
 
 // Change the border of all the hr element from solid to dashed type
-allHrsArray.map(hr => {
-  return hr.style.border = '1px dashed tomato '
-})
+allHrsArray.forEach(hr => 
+  hr.style.borderStyle = 'dashed'
+)
 
 // Create a pragraph element and store it in variable named 
 //'para' using `createElement`
@@ -68,7 +71,7 @@ para.innerText = 'querySelector'
 
 // Remove all the elements from box 1
 let boxOne = document.querySelector('.one')
-boxOne.remove();
+boxOne.innerHTML = "";
 
 // Replace all the elements inside box 1 with the para (you created above)
 boxOne.append(para)
@@ -90,18 +93,18 @@ in variable named box16
 
   - Focus on the difference between element and node
 */
-let box16 = document.querySelector('.sixteen')
-console.log(document.parentNode)
-console.log(document.childNodes)
-console.log(document.previousSibling)
-console.log(document.nextSibling)
-console.log(document.firstChild)
-console.log(document.lastChild)
+let box16 = document.querySelector('.sixteen');
+console.log(box16.parentNode)
+console.log(box16.childNodes)
+console.log(box16.previousSibling)
+console.log(box16.nextSibling)
+console.log(box16.firstChild)
+console.log(box16.lastChild)
 
-console.log(document.previousElementSibling)
-console.log(document.nextElementSibling)
-console.log(document.parentNode)
-console.log(document.parentNode)
+console.log(box16.previousElementSibling)
+console.log(box16.nextElementSibling)
+console.log(box16.parentNode)
+console.log(box16.parentNode)
 
 
 
@@ -137,24 +140,24 @@ box1.style.fontSize = '0.8 rem'
 
 // Change the background of all the alternate boxes (1, 3, 5, ....)
 // to aliceblue
-let allBoxes = document.querySelector('.box')
-allBoxes.filter((box) => {
-  if(box % 2 !== 0){
-    return box.style.background = 'aliceblue'
+let allBoxes = document.querySelectorAll('.box')
+allBoxes.forEach((elem, index) => {
+  if((index + 1) % 2 !== 0){
+    elem.style.backgroundColor = 'aliceblue'
   }
 })
 
 // add a class named "awesome-box" to the box 6 using 
 //classList property of DOM element.
-box6.classList.add= 'awesome-box'
+box6.classList.add('awesome-box');
 
 // Using the toggle classList property toggle the class
 // `awesome-box` from box 2
-box2.classList.toggle = 'awesome-box'
+box2.classList.toggle('awesome-box');
 
 // Using the remove classList proeprty remove the class
 // `awesome-box` from box 4
-box4.classList.remove = 'awesome-box'
+box4.classList.remove('awesome-box');
 
 // Change the background of the body to bisque
 document.body.style.background = 'bisque'
@@ -162,12 +165,11 @@ document.body.style.background = 'bisque'
 // Create a button and store it in a variable named 'btn'
 let btn = document.createElement('button')
 
-
 // textContent of the button should be 'Click Me'
 btn.textContent = 'Click Me'
 
 // Change the background of the btn to 'oldlace'
-btn.style.background = 'oldace'
+btn.style.backgroundColor= 'oldlace'
 
 // Change the font size of the btn to 1rem
 btn.style.fontSize = '1rem'
@@ -192,7 +194,7 @@ let box7 = document.querySelector('.seven')
 
 
 // Remove all the elements form box seven
-box7.remove()
+box7.innerHTML = "";
 
 // Append the imgElm to the box no 7
 box7.append(img)
