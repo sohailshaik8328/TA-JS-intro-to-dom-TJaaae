@@ -17,9 +17,11 @@
 
 // 7. Select the input of type `checkbox` with the `id` selector and store in `inputCheckbox`
 
-// 8. Select the input of type password using Attribute selectors. (eg: input[type="text"]) and store in `password`
+// 8. Select the input of type password using Attribute selectors.
+// (eg: input[type="text"]) and store in `password`
 
-// 9. Select the input using the placeholder attribute selector with value `password` and store in `attrPassword`
+// 9. Select the input using the placeholder 
+//attribute selector with value `password` and store in `attrPassword`
 
 // 10. Select all the `li` element and store in `allTopics`
 
@@ -43,11 +45,14 @@
 
 // 20. Select the first element with id `test` using `getElementById`
 
-// 21. Select the parent element of the element stored in `topics` variable (#5) and log the element.
+// 21. Select the parent element of the element stored in `topics`
+// variable (#5) and log the element.
 
 // 22. Select the next element sibling of the element stored in `topics` variable (#5) and log the element.
 
-// 23. Select the previous element sibling of the element stored in `topics` variable (#5) and change the `innerText` property to `Learning About Walking the DOM`.
+// 23. Select the previous element sibling of the element stored in `topics`
+// variable (#5) and change the `innerText` property to 
+//`Learning About Walking the DOM`.
 
 // 24. Select the first element child of the element stored in `topics` variable (#5) and change the `innerText` property of the element to `This is the first child element`.
 
