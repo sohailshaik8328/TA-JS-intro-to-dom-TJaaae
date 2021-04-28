@@ -8,11 +8,15 @@ default value to be "text" and return the input element inside label. (create it
 // Your code goes here
 
 
-function createInputElm(label, input){
- label = document.createElement('label')
- input = document.createElement('input')
+function createInputElm(labelMessage, type = 'text'){
+let label = document.createElement('label')
+let input = document.createElement('input')
 input.type = 'text'
-return label.append(input)
+
+label.innerText = labelMessage;
+label.append(input);
+
+return label
 }
 
 // TEST
@@ -23,6 +27,11 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 
 // Your code goes here
 
+function createInputElm(labelMessage, type = 'text'){
+  let html = `<lable>${labelMessage} <input type = '${type}' /> </label>`
+  return html;
+}
+
 // TEST
 createInputElm('Your name'); //<label>Your name: <input type="text"></label>
 createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></label>
@@ -30,11 +39,12 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 // 3. Create a function named `createList` that accept and array of data like ['Mango', 'Apple', 'Banana'] and returns
 // the html for the link like <ul> <li>Mango</li>  <li>Apple</li>  <li>Banana</li> </ul>
 // Your code goes here
-function createList(arr){
-  let ul = document.createElement('ul')
-  let li = document.createElement('li')
-  li.append(arr)
-  ul.append(li)
+function createList(arr = []){
+
+  let html = `<ul>
+  ${arr.map((elm) => `<li>${elm}</li>`).join(" ")}
+  </ul>`
+  return html;
 
 }
 
@@ -55,14 +65,29 @@ createList(['Afghanistan', 'Antarctica', 'Congo', 'Estonia']);
 */
 
 // Your code goes here
+function createTodoList(data = []){
+  let html = `<ul>
+  ${data
+    .map(
+      (elm) =>
+    `<li>
+    <p>${elm.name}</p>
+    <input type="checkbox" ${elm.isDone ? "checked" : ""}  name="" id="">
+    <span>X</span>
+  </li>`
+  )
+  .join("")}
+  </ul>`;
+  return html;
+}
 
 // TEST
-createTodoList([
-  { name: 'Learn DOM', isDone: false },
-  { name: 'Learn JS', isDone: true },
-]);
-createTodoList([
-  { name: 'Learn DOM', isDone: false },
-  { name: 'Learn React', isDone: true },
-  { name: 'Learn JS', isDone: true },
-]);
+// createTodoList([
+//   { name: 'Learn DOM', isDone: false },
+//   { name: 'Learn JS', isDone: true },
+// ]);
+// createTodoList([
+//   { name: 'Learn DOM', isDone: false },
+//   { name: 'Learn React', isDone: true },
+//   { name: 'Learn JS', isDone: true },
+// ]);
